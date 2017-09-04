@@ -36,6 +36,7 @@ namespace NadekoBot.Modules.Administration
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
             [RequireUserPermission(GuildPermission.Administrator)]
+            [OwnerOnly]
             public async Task LogServer(PermissionAction action)
             {
                 var channel = (ITextChannel)Context.Channel;
@@ -71,6 +72,7 @@ namespace NadekoBot.Modules.Administration
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
             [RequireUserPermission(GuildPermission.Administrator)]
+            [OwnerOnly]
             public async Task LogIgnore()
             {
                 var channel = (ITextChannel)Context.Channel;
@@ -99,6 +101,7 @@ namespace NadekoBot.Modules.Administration
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
             [RequireUserPermission(GuildPermission.Administrator)]
+            [OwnerOnly]
             public async Task LogEvents()
             {
                 await Context.Channel.SendConfirmAsync(Format.Bold(GetText("log_events")) + "\n" +
@@ -109,6 +112,7 @@ namespace NadekoBot.Modules.Administration
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
             [RequireUserPermission(GuildPermission.Administrator)]
+            [OwnerOnly]
             public async Task Log(LogType type)
             {
                 var channel = (ITextChannel)Context.Channel;
